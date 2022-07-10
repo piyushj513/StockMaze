@@ -1,0 +1,46 @@
+﻿@model StockMaze.Models.Vendor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 style="padding-top:80px;" class="text-center">Add New Vendor</h1>
+<hr />
+<div style="padding-top:20px;" class="row text">
+    <div class="col-md-8 offset-2">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="vendorName" class="control-label"></label>
+                <input asp-for="vendorName" class="form-control" />
+                <span asp-validation-for="vendorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vendorAddress" class="control-label"></label>
+                <input asp-for="vendorAddress" class="form-control" />
+                <span asp-validation-for="vendorAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vendorPhone" class="control-label"></label>
+                <input asp-for="vendorPhone" class="form-control" />
+                <span asp-validation-for="vendorPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vendorEmail" class="control-label"></label>
+                <input asp-for="vendorEmail" class="form-control" />
+                <span asp-validation-for="vendorEmail" class="text-danger"></span>
+            </div>
+          <div style="padding-top:10px;" class="form-group">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                       <a class="btn btn-outline-secondary" asp-action="Index">Back</a>
+                    </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

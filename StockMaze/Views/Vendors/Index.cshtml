@@ -1,0 +1,70 @@
+﻿@model IEnumerable<StockMaze.Models.Vendor>
+
+@{
+    ViewData["Title"] = "Index";
+    int intsno = 0;
+}
+
+<h2 class="text-center">Vendor</h2>
+<div class="text-center p-2">
+	<form asp-controller="Vendors" asp-action="Index" method="get">
+		<span style="padding-top:70px;" class="btn-group">
+			<input class="form-control mr-sm-2" name="SearchText" type="search" placeholder="Product Name" aria-label="Search">
+            <button style="background-color:#a47343;color:white;"class="btn my-2 my-sm-0" type="submit">Search</button>
+		</span>
+	</form>
+</div>
+<div style="padding-top:20px;" class="row">
+	<div class="col-md-8 offset-md-2">
+		<table style="border : 1px solid black; padding : 40px;" class="table table-hover">
+   <thead style="background-color:#a47343;color:white;">
+        <tr style="text-align:center">
+            <th>S no</th>
+            <th>
+                @Html.DisplayNameFor(model => model.vendorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vendorAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vendorPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vendorEmail)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    intsno = intsno + 1;
+        <tr>
+            <td>@intsno</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorEmail)
+            </td>
+          <td>
+						<div class="btn-group">
+						<a class="btn btn-sm btn-outline-primary" style="margin-right:16px" asp-action="Edit" asp-route-id="@item.vendorId"><i class="bi bi-pencil-square"></i>Edit</a>
+						<a class="btn btn-sm btn-outline-info" asp-action="Details" asp-route-id="@item.vendorId"><i class="bi bi-eye"></i>Details</a>
+						<a class="btn btn-sm btn-outline-danger" style="margin-left:16px"asp-action="Delete" asp-route-id="@item.vendorId"><i class="bi bi-trash"></i>Delete</a>
+						</div>
+						</td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
+<div style="position:fixed; right:50px; bottom:100px;" class="text-white">
+	<a class="btn btn-success " asp-controller="Vendors" asp-action="Create"><i class="bi bi-plus-circle"></i>Create</a>
+</div>

@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+           <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Products" asp-action="Index"><i class="bi bi-box"></i>Products</a>
+             </li>
+             <li class="nav-item">
+             <a class="nav-link text-dark" asp-controller="Customers" asp-action="Index"><i class="bi bi-person"></i>Customer</a>
+             </li>
+             <li class="nav-item">
+             <a class="nav-link text-dark" asp-controller="Vendors" asp-action="Index"><i class="bi bi-truck"></i>Vendor</a>
+               </li>
+             <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Transactions" asp-action="Index"><i class="bi bi-cash"></i>Transaction</a>
+               </li>
+             <li class="nav-item">
+              <a  class="nav-link text-dark">Hello @User.Identity?.Name!</a>
+           </li>
+           <li class="nav-item">
+           <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+         <button  type="submit" class="btn btn-primary shadow" role="button" style="font-size: 15px;color: rgb(255, 255, 255);--bs-primary: #a47343;--bs-primary-rgb: 164,115,67;background: rgb(164,115,67);">Logout</button>
+            </form>
+           </li>
+}
+else
+{
+    <li style="margin-left:700px;" class="nav-item">
+        <a class="btn btn-primary shadow" role="button" style="font-size: 15px;color: rgb(255, 255, 255);--bs-primary: #a47343;--bs-primary-rgb: 164,115,67;background: rgb(164,115,67);" asp-area="Identity" asp-page="/Account/Register">Sign Up</a>
+    </li>
+    <li style="margin-left:10px;" class="nav-item">
+        <a class="btn btn-primary shadow" role="button" style="font-size: 15px;color: rgb(255, 255, 255);--bs-primary: #a47343;--bs-primary-rgb: 164,115,67;background: rgb(164,115,67);" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    </li>
+}
+</ul>

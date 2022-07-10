@@ -1,0 +1,74 @@
+﻿@model StockMaze.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>@ViewData["Title"] - StockMaze</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+</head>
+
+<h1 style="padding-top:80px;" class="text-center">Add a New Product</h1>
+<hr />
+<div style="padding-top:20px;" class="row text">
+    <div class="col-md-8 offset-2">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="productName" class="control-label"></label>
+                        <input asp-for="productName" class="form-control" />
+                        <span asp-validation-for="productName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productDesc" class="control-label"></label>
+                        <input asp-for="productDesc" class="form-control" />
+                        <span asp-validation-for="productDesc" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="vendorId" class="control-label"></label>
+                        <input asp-for="vendorId" class="form-control" />
+                        <span asp-validation-for="vendorId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="vendorName" class="control-label"></label>
+                        <input asp-for="vendorName" class="form-control" />
+                        <span asp-validation-for="vendorName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productCost" class="control-label"></label>
+                        <input asp-for="productCost" class="form-control" />
+                        <span asp-validation-for="productCost" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productMargin" class="control-label"></label>
+                        <input asp-for="productMargin" class="form-control" />
+                        <span asp-validation-for="productMargin" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productSellingPrice" class="control-label"></label>
+                        <input asp-for="productSellingPrice" class="form-control" />
+                        <span asp-validation-for="productSellingPrice" class="text-danger"></span>
+                        </div>
+                    <div style="padding-top:10px;" class="form-group">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                       <a class="btn btn-outline-secondary" asp-action="Index">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

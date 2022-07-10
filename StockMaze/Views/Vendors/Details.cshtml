@@ -1,0 +1,44 @@
+﻿@model StockMaze.Models.Vendor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 style="padding-top:80px;">Details</h1>
+
+<div style="padding-top:20px;" class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1 class="text-center">@Model.vendorName Details</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="vendorName" class="control-label"></label>
+                <input asp-for="vendorName" class="form-control" readonly/>
+                <span asp-validation-for="vendorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vendorAddress" class="control-label"></label>
+                <input asp-for="vendorAddress" class="form-control" readonly/>
+                <span asp-validation-for="vendorAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vendorPhone" class="control-label"></label>
+                <input asp-for="vendorPhone" class="form-control" readonly/>
+                <span asp-validation-for="vendorPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vendorEmail" class="control-label"></label>
+                <input asp-for="vendorEmail" class="form-control"readonly />
+                <span asp-validation-for="vendorEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                          <a class="btn btn-outline-primary float-right" asp-action="Edit" asp-route-id="@Model.vendorId">Edit</a> |
+                        <a class="btn btn-outline-secondary" asp-action="Index">Back</a>
+            </div>
+    </div>
+</div>
+</div>
+</div>

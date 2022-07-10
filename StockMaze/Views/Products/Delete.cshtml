@@ -1,0 +1,61 @@
+﻿@model StockMaze.Models.Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div style="padding-top:80px;" class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1 class="text-center">Delete @Model.productName ? </h1>
+        </p>
+        <div style="padding-top:20px;" class="row">
+            <div class="col-md-8 offset-2">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="productName" class="control-label"></label>
+                        <input asp-for="productName" class="form-control" readonly/>
+                        <span asp-validation-for="productName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productDesc" class="control-label"></label>
+                        <input asp-for="productDesc" class="form-control" readonly/>
+                        <span asp-validation-for="productDesc" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="vendorId" class="control-label"></label>
+                        <input asp-for="vendorId" class="form-control" readonly/>
+                        <span asp-validation-for="vendorId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="vendorName" class="control-label"></label>
+                        <input asp-for="vendorName" class="form-control" readonly/>
+                        <span asp-validation-for="vendorName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productCost" class="control-label"></label>
+                        <input asp-for="productCost" class="form-control" readonly/>
+                        <span asp-validation-for="productCost" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productMargin" class="control-label"></label>
+                        <input asp-for="productMargin" class="form-control" readonly/>
+                        <span asp-validation-for="productMargin" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productSellingPrice" class="control-label"></label>
+                        <input asp-for="productSellingPrice" class="form-control" readonly/>
+                        <span asp-validation-for="productSellingPrice" class="text-danger"></span>
+                        </div>
+                    <div class="form-group">
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="productId"/>
+                            <input type="submit" value="Delete" class="btn btn-danger float-right" /> |
+                        <a class="btn btn-outline-secondary" asp-action="Index">Back</a>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

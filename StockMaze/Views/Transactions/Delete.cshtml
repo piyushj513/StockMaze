@@ -1,0 +1,86 @@
+﻿@model StockMaze.Models.Transaction
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div style="padding-top:80px;" class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1 class="text-center">Delete @Model.TransactionName ? </h1>
+        </p>
+        <div style="padding-top:20px;" class="row">
+            <div class="col-md-8 offset-2">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TransactionDate" class="control-label"></label>
+                <input asp-for="TransactionDate" class="form-control" readonly/>
+                <span asp-validation-for="TransactionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionName" class="control-label"></label>
+                <input asp-for="TransactionName" class="form-control" readonly/>
+                <span asp-validation-for="TransactionName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionDesc" class="control-label"></label>
+                <input asp-for="TransactionDesc" class="form-control" readonly/>
+                <span asp-validation-for="TransactionDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionInvoiceRef" class="control-label"></label>
+                <input asp-for="TransactionInvoiceRef" class="form-control" readonly/>
+                <span asp-validation-for="TransactionInvoiceRef" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductId" class="control-label"></label>
+                <input asp-for="ProductId" class="form-control" readonly/>
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" readonly/>
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InventoryInUnit" class="control-label"></label>
+                <input asp-for="InventoryInUnit" class="form-control" readonly/>
+                <span asp-validation-for="InventoryInUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InventoryOutUnit" class="control-label"></label>
+                <input asp-for="InventoryOutUnit" class="form-control" readonly/>
+                <span asp-validation-for="InventoryOutUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InventoryBalUnit" class="control-label"></label>
+                <input asp-for="InventoryBalUnit" class="form-control" readonly/>
+                <span asp-validation-for="InventoryBalUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductCostPricePU" class="control-label"></label>
+                <input asp-for="ProductCostPricePU" class="form-control" readonly/>
+                <span asp-validation-for="ProductCostPricePU" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductSellingPricePU" class="control-label"></label>
+                <input asp-for="ProductSellingPricePU" class="form-control" readonly/>
+                <span asp-validation-for="ProductSellingPricePU" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InvBalCostPriceTotal" class="control-label"></label>
+                <input asp-for="InvBalCostPriceTotal" class="form-control" readonly/>
+                <span asp-validation-for="InvBalCostPriceTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <form asp-action="Delete">
+                            <input type="hidden" asp-for="transactionId"/>
+                            <input type="submit" value="Delete" class="btn btn-danger float-right" /> |
+                        <a class="btn btn-outline-secondary" asp-action="Index">Back</a>
+                        </form>
+            </div>
+    </div>
+</div>
+</div>
+</div>

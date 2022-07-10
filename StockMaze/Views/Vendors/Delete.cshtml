@@ -1,0 +1,45 @@
+﻿@model StockMaze.Models.Vendor
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div style="padding-top:80px;" class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1 class="text-center">Delete @Model.vendorName ? </h1>
+        </p>
+        <div style="padding-top:20px;" class="row">
+            <div class="col-md-8 offset-2">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="vendorName" class="control-label"></label>
+                <input asp-for="vendorName" class="form-control" readonly/>
+                <span asp-validation-for="vendorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vendorAddress" class="control-label"></label>
+                <input asp-for="vendorAddress" class="form-control" readonly/>
+                <span asp-validation-for="vendorAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vendorPhone" class="control-label"></label>
+                <input asp-for="vendorPhone" class="form-control" readonly/>
+                <span asp-validation-for="vendorPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vendorEmail" class="control-label"></label>
+                <input asp-for="vendorEmail" class="form-control" readonly/>
+                <span asp-validation-for="vendorEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <form asp-action="Delete">
+                            <input type="hidden" asp-for="vendorId"/>
+                            <input type="submit" value="Delete" class="btn btn-danger float-right" /> |
+                        <a class="btn btn-outline-secondary" asp-action="Index">Back</a>
+                        </form>
+            </div>
+    </div>
+</div>
+</div>
+</div>
